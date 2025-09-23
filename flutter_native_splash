@@ -1,0 +1,17 @@
+flutter_native_splash:
+  # Background color for splash screen (or use image instead)
+  color: "#42a5f5"
+
+  # Dark mode splash screen image (optional)
+  image_dark: "assets/images/Splash_Screen.png"
+
+  # Android 12+ specific settings
+  android_12:
+    image: "assets/images/Splash_Screen.png"
+    color: "#42a5f5"
+    image_dark: "assets/images/Splash_Screen.png"
+
+  # Enable platforms
+  android: true
+  ios: false
+  web: false
