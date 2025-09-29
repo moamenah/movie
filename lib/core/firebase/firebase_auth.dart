@@ -25,7 +25,7 @@ class FireBaseAuth{
  //*******
 
 
-Future <void> signIn(String email ,String password)async{
+Future <void> logIn(String email ,String password)async{
   try {
     final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email.trim(),

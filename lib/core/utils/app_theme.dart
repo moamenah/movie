@@ -30,6 +30,18 @@ class AppTheme {
       titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.primary),
     ),
 
+
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.background,
+      selectedItemColor: AppColors.primary,
+      unselectedItemColor: AppColors.textPrimary,
+     type: BottomNavigationBarType.fixed
+     // showSelectedLabels: true
+    ),
+
+
+
     // ===== BottomNavigationBar Theme =====
     // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     //   backgroundColor: AppColors.background,
@@ -86,15 +98,7 @@ class AppTheme {
 
 
 
-
-
-
-
-
-
-
-
-
+    
     // ===== Input Decoration Theme =====
     // inputDecorationTheme: InputDecorationTheme(
     //   filled: true,

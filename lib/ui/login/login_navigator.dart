@@ -1,6 +1,6 @@
 import 'package:flutter/animation.dart';
 
-abstract class RegisterNavigator {
+abstract class LoginNavigator {
   void showMyLoading(String message);
   void hideMyLoading();
   void showMyMsg({
@@ -11,5 +11,5 @@ abstract class RegisterNavigator {
     VoidCallback? navAction,
   });
 
-  void navigateToHome(); // دالة جديدة
+  void navigateToHome();
 }

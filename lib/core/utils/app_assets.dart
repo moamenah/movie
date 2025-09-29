@@ -21,5 +21,7 @@ class AppAssets {
   static const String icon_phone = "assets/images/icon_phone.png";
   static const String login_movie = "assets/images/login_movie.png";
   static const String forget_pas_image = "assets/images/forget_pas_image.png";
+  static const String Watch_Now = "assets/images/Watch_Now.png";
+  static const String Available_Now = "assets/images/Available_Now.png";
 
 }

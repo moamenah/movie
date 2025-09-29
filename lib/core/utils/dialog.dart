@@ -4,50 +4,50 @@ import 'package:movie_app/core/utils/app_styles.dart';
 
 class DialogUtils {
 
-
+  // Loading dialog
   static void showLoading({
     required BuildContext context,
     required String text,
-  }) {showDialog(
-    barrierDismissible: false,
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        content: Row(
-          children: [
-            CircularProgressIndicator(color: AppColors.primary),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(text, style: AppStyles.regular14White),
-            ),
-          ],
-        ),
-      );
-    },
-  );
+  }) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Row(
+            children: [
+              CircularProgressIndicator(color: AppColors.primary),
+              const SizedBox(width: 10),
+              Text(text, style: AppStyles.regular14White),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   static void hideLoading({required BuildContext context}) {
     Navigator.pop(context);
   }
 
+  // Message dialog
   static void showMsg({
     required BuildContext context,
     required String text,
     String? title,
     String? postActionName,
-    Function? posAction,
+    VoidCallback? postAction,  // بدل posAction
     String? navActionName,
-    Function? navAction,
-    bool barrierDismissible=true,
+    VoidCallback? navAction,
+    bool barrierDismissible = true,
   }) {
-    List<Widget>? actions = [];
+    List<Widget> actions = [];
     if (postActionName != null) {
       actions.add(
         TextButton(
           onPressed: () {
             Navigator.pop(context);
-            posAction?.call();
+            postAction?.call();  // استخدم postAction هنا
           },
           child: Text(postActionName, style: AppStyles.regular14White),
         ),
@@ -64,6 +64,7 @@ class DialogUtils {
         ),
       );
     }
+
     showDialog(
       barrierDismissible: barrierDismissible,
       context: context,
@@ -74,4 +75,6 @@ class DialogUtils {
       ),
     );
   }
+
 }
+

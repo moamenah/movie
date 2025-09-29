@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/app_assets.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
+import 'package:movie_app/core/utils/app_routes.dart';
 import 'package:movie_app/core/utils/app_styles.dart';
 import 'package:movie_app/core/utils/dialog.dart';
 import 'package:movie_app/ui/register_screen/custom_Text_form_field.dart';
@@ -57,7 +58,7 @@ class _RegisterScreenState extends State<RegisterScreen> implements RegisterNavi
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding:  EdgeInsets.all(10.0),
           child: SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Form(
@@ -228,7 +229,10 @@ class _RegisterScreenState extends State<RegisterScreen> implements RegisterNavi
                       Text("Already Have Account?",
                           style: AppStyles.regular16White),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacementNamed(AppRoutes.home_screen);
+
+                        },
                         child: Text(
                           "Login",
                           style: AppStyles.regular16White.copyWith(
@@ -261,8 +265,26 @@ class _RegisterScreenState extends State<RegisterScreen> implements RegisterNavi
   }
 
   @override
-  void showMyMsg(String message) {
-    // TODO: implement showMyMsg
-    DialogUtils.showMsg(context: context, text: message);
+  void showMyMsg({
+    required String message,
+    VoidCallback? postAction,
+    String? postActionName,
+    VoidCallback? navAction,
+    String? navActionName,
+  }) {
+    DialogUtils.showMsg(
+      context: context,
+      text: message,
+      postActionName: postActionName ?? "OK", // افتراضي "OK"
+      postAction: postAction,
+      navActionName: navActionName,
+      navAction: navAction,
+    );
   }
+
+  @override
+  void navigateToHome() {
+    Navigator.of(context).pushReplacementNamed(AppRoutes.home_screen);
+  }
+
 }

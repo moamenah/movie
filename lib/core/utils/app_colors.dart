@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFFF6BD00); // الأصفر
+  static const Color primary = Color(0xFFFFBB3B); // الأصفر
   static const Color background = Color(0xFF121312); // أسود/رمادي غامق
 
 
 
 
-  static const Color bgCutomForm = Color(0xFF282A28);
+  static const Color bgCustomForm = Color(0xFF282A28);
+  static const Color rating = Color(0xFF12131);
 
 
   static const Color secondaryBackground = Color(0xFF1E1E1E); // للكروت
@@ -18,4 +19,5 @@ class AppColors {
   static const Color ratingStar = Color(0xFFFFC107); // أصفر ذهبي
   static const Color transparent=Colors.transparent;
 }
-//
+//282A28
+//2

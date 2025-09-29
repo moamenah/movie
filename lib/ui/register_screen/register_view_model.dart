@@ -42,26 +42,33 @@ class RegisterViewModel extends ChangeNotifier {
         await FireBaseFireStore.addUser(userModel);
 
         navigator.hideMyLoading();
-        navigator.showMyMsg("Register successfully");
+
+        // ⚡ Show success message with postAction to navigate home
+        navigator.showMyMsg(
+          message: "Register successfully",
+          postActionName: "OK",
+          postAction: () {
+            navigator.navigateToHome();
+          },
+        );
+
         print("User added to Firestore with id ${userModel.id}");
       } on FirebaseAuthException catch (e) {
         navigator.hideMyLoading();
 
         if (e.code == 'weak-password') {
-          navigator.showMyMsg("The password provided is too weak.");
+          navigator.showMyMsg(message: "The password provided is too weak.");
         } else if (e.code == 'email-already-in-use') {
-          navigator.showMyMsg("The account already exists for that email.");
+          navigator.showMyMsg(message: "The account already exists for that email.");
         } else if (e.code == 'network-request-failed') {
-          navigator.showMyMsg(
-              "Network error. Please check your internet connection.");
+          navigator.showMyMsg(message: "Network error. Please check your internet connection.");
         } else {
-          navigator.showMyMsg("Firebase error: ${e.message}");
+          navigator.showMyMsg(message: "Firebase error: ${e.message}");
         }
       } catch (e) {
         navigator.hideMyLoading();
-        navigator.showMyMsg("Unexpected error: $e");
+        navigator.showMyMsg(message: "Unexpected error: $e");
       }
-
     }
   }
 }

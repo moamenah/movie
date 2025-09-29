@@ -41,7 +41,7 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide.none
         ),
         filled: true,
-        fillColor: AppColors.bgCutomForm,
+        fillColor: AppColors.bgCustomForm,
         hintText: hintText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
@@ -49,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
 
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: AppColors.bgCutomForm
+            color: AppColors.bgCustomForm
           ),
           borderRadius: BorderRadius.circular(15),
         ),

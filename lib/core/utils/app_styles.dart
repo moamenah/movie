@@ -8,12 +8,22 @@ class AppStyles{
           fontSize: 16,
     color: AppColors.textPrimary
       );
+  static TextStyle regular16WPrimary =GoogleFonts.inter(
+      fontWeight: FontWeight.w400,
+      fontSize: 16,
+      color: AppColors.primary
+  );
 
   //**************
   static TextStyle regular20black =GoogleFonts.inter(
       fontWeight: FontWeight.w400,
       fontSize: 20,
       color: AppColors.background
+  );
+  static TextStyle regular20White =GoogleFonts.inter(
+      fontWeight: FontWeight.w400,
+      fontSize: 20,
+      color: AppColors.textPrimary
   );
 
   static TextStyle regular14White =GoogleFonts.inter(
