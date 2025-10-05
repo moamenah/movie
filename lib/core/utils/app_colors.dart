@@ -9,6 +9,7 @@ class AppColors {
 
   static const Color bgCustomForm = Color(0xFF282A28);
   static const Color rating = Color(0xFF12131);
+  static const Color year = Color(0xFFADADAD);
 
 
   static const Color secondaryBackground = Color(0xFF1E1E1E); // للكروت
@@ -20,4 +21,4 @@ class AppColors {
   static const Color transparent=Colors.transparent;
 }
 //282A28
-//2
+//

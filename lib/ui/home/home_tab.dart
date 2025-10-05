@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/app_assets.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
+import 'package:movie_app/core/utils/app_routes.dart';
 import 'package:movie_app/core/utils/app_styles.dart';
+import 'package:movie_app/ui/home/movies_screen/movies_screen.dart';
 import 'package:movie_app/view_model/movies_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -100,10 +102,12 @@ Image.asset(AppAssets.Watch_Now),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Comedy", style: AppStyles.regular20White),
+            Text("Romance", style: AppStyles.regular20White),
             TextButton(
               onPressed: () {
-                // هنا ممكن تعمل navigate لصفحة الأكشن لو حبيت
+
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => MoviesScreen(genre: 'Romance',),));
+
               },
               child: Row(
                 children: [
